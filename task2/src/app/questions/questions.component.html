@@ -1,0 +1,90 @@
+<button mat-flat-button color="warn" (click)='startTimer()'>Start Timer!</button>
+<button mat-flat-button color="accent" (click)='pauseTimer()'>Pause</button>
+<p>{{timeLeft}} Seconds Left....</p>
+<h1>Time Ellapsed : {{timeEllapsed}}</h1>
+
+<div class="determinate" [style.width.%]="(quesService.qnProgress+1)*10"></div>
+<mat-horizontal-stepper>
+  <mat-step>
+    <ng-template matStepLabel>First question</ng-template>
+    <mat-label>
+      <h3>
+        Design Patterns Quiz including solid principles.
+      </h3>
+      <input type = "radio"  (click) = "changeQuestion($event)" value = "In SOLID principle, O stands for:">In SOLID principle, O stands for
+      <input type = "radio" name = "ans3" (click) = "changeQuestion($event)" value = "Objects and Variables">Objects and Variables
+      <input type = "radio" name = "ans3" (click) = "changeQuestion($event)" value = "Open-Closed Principle">Open-Closed Principle
+      <input type = "radio" name = "ans3" (click) = "changeQuestion($event)" value = "Object Oriented Programming">Object Oriented Programming
+    </mat-label>
+    <div>
+      <button mat-button color="accent" matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Second question</ng-template>
+    <mat-label>
+      <h3>
+        Which pattern defines an interface for creating an object, but let the subclasses decide which class to instantiate. It let the instantiation differ to subclasses.
+      </h3>
+
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Factory Method">Factory Method
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Abstract Factory">Abstract Factory
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Builder">Builder
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Prototype">Prototype
+
+    </mat-label>
+    <div>
+      <button mat-button color="accent" matStepperNext>Next</button>
+      <button mat-button color="accent" matStepperPrevious>Previous</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Third question</ng-template>
+    <mat-label>
+      <h3>
+        Singleton pattern is a (according to Gang of Four):
+      </h3>
+      <input type = "radio"  (click) = "changeQuestion($event)" value = "Creational Pattern" >Creational Pattern
+      <input type = "radio"  name = 'ans2' (click) = "changeQuestion($event)" value = "Behavioural Pattern">Behavioural Pattern
+      <input type = "radio"  name = 'ans2' (click) = "changeQuestion($event)" value = "Structural Pattern">Structural Pattern
+      <input type = "radio"  name = 'ans2' (click) = "changeQuestion($event)" value = "None of the above">None of the above
+    </mat-label>
+    <div>
+      <button mat-button color="accent" matStepperNext>Next</button>
+        <button mat-button color="accent" matStepperPrevious>Previous</button>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Fourth question</ng-template>
+    <mat-label>
+      <h3>
+        MVC, MVP and MVVP are related to which layer of software architecture?
+      </h3>
+      <input type = "radio" class = 'first' name = 'ans' (click) = "changeQuestion($event)" value = "Data Access Layer" >Data Access Layer
+      <input type = "radio" class = 'first' name = 'ans' (click) = "changeQuestion($event)" value = "Business/Service Layer">Business/Service Layer
+      <input type = "radio" class = 'first' name = 'ans' (click) = "changeQuestion($event)" value = "Third Party Library">Third Party Library
+      <input type = "radio" class = 'first' name = 'ans' (click) = "changeQuestion($event)" value = "User Interface">User Interface
+    </mat-label>
+    <div>
+      <button mat-button color="accent" matStepperNext>Next</button>
+      <button mat-button color="accent" matStepperPrevious>Previous</button>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Fifth question</ng-template>
+    <mat-label>
+      <h3>
+        Which pattern ensures a class has only one instance, and provide a global access point to it?
+      </h3>
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Single Class Factory" >Single Class Factory
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "true">Singleton
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Proxy">Proxy
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeQuestion($event)" value = "Flyweight">Flyweight
+    </mat-label>
+    <div>
+      <button mat-button color="accent" matStepperPrevious>Previous</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
